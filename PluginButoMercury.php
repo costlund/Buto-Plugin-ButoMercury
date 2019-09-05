@@ -16,4 +16,10 @@ class PluginButoMercury{
     }
     wfDocument::renderElement($element);
   }
+  public function widget_session($data, $attribute = array('id' => 'plugin_buto_mercury_session', 'style' => 'display:none')){
+    $innerHTML = wfHelp::getYmlDump($_SESSION);
+    $element = array();
+    $element[] = wfDocument::createHtmlElement('pre', $innerHTML, $attribute);
+    wfDocument::renderElement($element);
+  }
 }
